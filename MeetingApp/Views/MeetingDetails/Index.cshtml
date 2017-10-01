@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MeetingApp.Models.MeetingDetail>
+
+@{
+    ViewBag.Title = "Meeting List";
+}
+
+<h2>Meetings</h2>
+
+<p>
+    @Html.ActionLink("Create a New Meeting", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting_StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting_EndTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting_StartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting_EndTime)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new { id=item.Meeting_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Meeting_ID }) |
+            @Html.ActionLink("Remove", "Delete", new { id=item.Meeting_ID })
+        </td>
+    </tr>
+}
+
+</table>

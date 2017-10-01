@@ -1,0 +1,50 @@
+﻿@model MeetingApp.Models.MeetingDetail
+
+@{
+    ViewBag.Title = "Meeting Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeetingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting_StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting_StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meeting_EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meeting_EndTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Meeting_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
